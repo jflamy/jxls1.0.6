@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Chart Sample</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+              <strong>Charts</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Introduction"></a>Introduction</h2>
+<p>Creating Excel reports containing charts is not difficult with
+                <a class="externalLink" href="http://jxls.sourceforge.net">jXLS</a>.
+             Mainly it is possible because
+                <a class="externalLink" href="http://poi.apache.org/"> Jakarta POI </a> attempts to keep existing records intact as far as possible.
+            </p>
+<div class="section"><h2><a name="Basic_Chart_Sample"></a>Basic Chart Sample</h2>
+<p>To create a chart in Excel we have to set source data range. Here we assume that these source data takes up a fixed number of rows and all data for the rows are contained in some collection.
+	             		To setup this with
+                    <a class="externalLink" href="http://jxls.sourceforge.net">jXLS</a> we should use
+                    <a href="../reference/collections.html#fixedSizeCollections">fixed size collection</a> feature.  Let's look at XLS template screenshot for setting up Payment charts for a list of employees
+                </p>
+<img src="../images/chartTemplateXLS.gif" alt="Screenshot of Employee Payment Charts XLS Template" /><p><a href="../xls/chart.xls">chart.xls</a></p>
+<p>You can see that source data list
+                    <code>employee</code> is setup for fixed size collection export. Here is the source code snippet to run the sample
+                </p>
+<div class="source"><pre>
+				        List staff = new ArrayList();
+				        staff.add(new Employee(&quot;Derek&quot;, 35, 3000, 0.30));
+				        staff.add(new Employee(&quot;Elsa&quot;, 28, 1500, 0.15));
+				        staff.add(new Employee(&quot;Oleg&quot;, 32, 2300, 0.25));
+				        staff.add(new Employee(&quot;Neil&quot;, 34, 2500, 0.00));
+				        staff.add(new Employee(&quot;Maria&quot;, 34, 1700, 0.15));
+				        staff.add(new Employee(&quot;John&quot;, 35, 2800, 0.20));
+				        staff.add(new Employee(&quot;Leonid&quot;, 29, 1700, 0.20));
+				        Map beans = new HashMap();
+				        beans.put(&quot;employee&quot;, staff);
+				        XLSTransformer transformer = new XLSTransformer();
+				        transformer.markAsFixedSizeCollection(&quot;employee&quot;);
+				        transformer.transformXLS(templateFileName, beans, destFileName);
+                </pre>
+</div>
+<p>You can see that
+                    <code>employee</code> list is marked as
+                    <a href="../reference/collections.html#fixedSizeCollections">fixed size collection</a> .
+                </p>
+<p>Here is the output</p>
+<img src="../images/chartOutputXLS.gif" alt="Screenshot of Employee Payment Charts XLS Output" /><p><a href="../xls/chart_output.xls">chart_output.xls</a></p>
+</div>
+<div class="section"><h2><a name="Dynamic_Rows_Chart_Sample"></a>Dynamic Rows Chart Sample</h2>
+<p>It is possible to create a chart even if the number of source data rows is dynamic.
+                    Check the following articles to understand the approach to this
+                    http://pubs.logicalexpressions.com/pub0009/LPMArticle.asp?ID=518.
+                    http://amateuratbest.blogspot.com/2007/08/excel-charting-in-java.html
+                    http://www.tushar-mehta.com/excel/newsgroups/dynamic_charts/index.html
+                </p>
+</div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

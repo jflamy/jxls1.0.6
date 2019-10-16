@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Tags in XLS templates</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+              <strong>Using Tags</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Introduction"></a>Introduction</h2>
+<p>jXLS allows you to use predefined XML tags in your template to control XLS transformation behaviour.</p>
+</div>
+<div class="section"><h2><a name="jx:forEach_Tag"></a>jx:forEach Tag</h2>
+<p>Typical usage of <code>&lt;jx:forEach&gt;</code> tag is as follows</p>
+<div class="source"><pre>
+                &lt;jx:forEach items=&quot;${departments}&quot; var=&quot;department&quot;&gt;
+                    ${department.name} | ${department.chief}
+                &lt;/jx:forEach&gt;
+            </pre>
+</div>
+<p>jx tags can be nested into each other without any problems. </p>
+<p>If you place opening and closing jx:forEach tags onto the same row jXLS will duplicate corresponding excel
+                cells in this row by columns.
+            </p>
+<note>Currently if you need to duplicate excel rows with jx:forEach tag you have to place jx:forEach opening
+            and closing tag into separate excel rows. All other cells in these rows are ignored.</note><p>See also <a href="../samples/tagsample.html">Basic Tags sample</a></p>
+<div class="section"><h2><a name="Grouping_data_with_jx:forEach_tag"></a>Grouping data with jx:forEach tag</h2>
+<p><code>jx:forEach</code> tag allows you to perform grouping of collection data by one of the underlying bean properties.
+                This can be done with <code>groupBy</code> and <code>groupOrder</code> attributes which specify which property should be used for grouping data
+                and how groups should be ordered.
+                For example </p>
+<div class="source"><pre>
+                    &lt;jx:forEach items=&quot;${employees}&quot; groupBy=&quot;age&quot;&gt;
+                    Age: ${group.item.age}
+                    &lt;jx:forEach items=&quot;${group.items}&quot; var=&quot;employee&quot;&gt;
+                    ${employee.name} | ${employee.payment} | ${employee.bonus}
+                    &lt;/jx:forEach&gt;
+                    &lt;/jx:forEach&gt;
+                </pre>
+</div>
+<p>In this example we group <code>employees</code> by age. When encountered <code>groupBy</code> attribute
+                jXLS performs grouping internally and places new bean named <code>group</code> into the context. This bean is rather simple -
+                it contains two properties. The <code>item</code> property which is a bean from current processed group and the
+                <code>items</code> property which represents the collection of all the beans from this group.</p>
+<p>As you can see in this example we first displaying some information about current group age using </p>
+<div class="source"><pre>
+                    Age: ${group.item.age}
+                </pre>
+</div>
+<p>And after that we use inner <code>&lt;jx:forEach&gt;</code> tag to iterate and display all the group items</p>
+<div class="source"><pre>
+                    &lt;jx:forEach items=&quot;${group.items}&quot; var=&quot;employee&quot;&gt;
+                    ${employee.name} | ${employee.payment} | ${employee.bonus}
+                    &lt;/jx:forEach&gt;
+                </pre>
+</div>
+<p>
+                    By default if there is no <code>groupOrder</code> attribute group order will be preserved &quot;as is&quot; so that groups will be
+                    in the same order as they were found in the original <code>items</code> collection. If you need to sort groups in
+                    ascending or descending order you can set <code>groupOrder</code> attribute to <code>asc</code> or <code>desc</code> value accordingly.
+                </p>
+<p>In case of using <code>groupBy</code> attribute the <code>var</code> attribute of <code>jx:forEach</code>
+                   tag is ignored.
+                </p>
+</div>
+<div class="section"><h2><a name="Filtering_collection_items"></a>Filtering collection items</h2>
+<p>You can use 'select' attribute of jx:forEach tag to control which items get included in the loop. For example if we want to include only  employees
+                with payments more than 2000 we can use next syntax</p>
+<div class="source"><pre>
+                    &lt;jx:forEach items=&quot;${employees}&quot; var=&quot;employee&quot; select=&quot;${employee.payment &gt; 2000}&quot;&gt;
+                    ${employee.name} | ${employee.payment} | ${employee.bonus}
+                    &lt;/jx:forEach&gt;
+                </pre>
+</div>
+</div>
+<div class="section"><h2><a name="varStatus_attribute"></a>varStatus attribute</h2>
+<p>jx:forEach tag support varStatus attribute which defines a name of loop status object which will be passed into bean context for each iteration.
+                The loop status object is an instance of LoopStatus class which has single 'index' property identifying the index of the current item in the collection being iterated</p>
+<div class="source"><pre>
+                    &lt;jx:forEach items=&quot;${employees}&quot; var=&quot;employee&quot; varStatus=&quot;status&quot;&gt;
+                    | ${status.index} | ${employee.name} | ${employee.payment} | ${employee.bonus}
+                    &lt;/jx:forEach&gt;
+                </pre>
+</div>
+</div>
+</div>
+<div class="section"><h2><a name="jx:if_Tag"></a>jx:if Tag</h2>
+<p>Typical usage of <code>&lt;jx:if&gt;</code> tag is as follows</p>
+<div class="source"><pre>
+                    &lt;jx:if test=&quot;${department.chief.payment &gt; 2000.0}&quot;&gt;
+                        Chief Name: ${department.chief.name}
+                    &lt;/jx:if&gt;
+            </pre>
+</div>
+<p>jx:if tag can be used to exclude some columns from export based on some condition. If you
+            place opening and closing <code>jx:if</code> tag into the same row jXLS will process or remove columns contained in
+            tag body depending on test condition.</p>
+</div>
+<div class="section"><h2><a name="jx:outline_Tag"></a>jx:outline Tag</h2>
+<p><code>&lt;jx:outline&gt;</code> tag allows you to group particular set of rows. For example having</p>
+<div class="source"><pre>
+                    &lt;jx:outline&gt;
+                        //any rows can go here
+                    &lt;/jx:outline&gt;
+            </pre>
+</div>
+<p>All excel rows from the body of jx:group tag will be grouped.</p>
+<p><code>&lt;jx:outline&gt;</code> tag has one optional boolean attribute <code>detail</code> indicating
+            initial state of grouped rows - should they be displayed expanded or collapsed. Default value is <code>false</code>
+                meaning grouped rows will be collapsed (or hidden).
+            </p>
+</div>
+<div class="section"><h2><a name="jx:out_Tag"></a>jx:out Tag</h2>
+<p>jx:out tag looks like this</p>
+<div class="source"><pre>
+                &lt;jx:out expr=&quot;expression&quot; /&gt;
+            </pre>
+</div>
+<p>
+                This tag can be used anywhere that an expression would be used normally and simply takes a JEXL expression as an attribute value.
+            </p>
+</div>
+<div class="section"><h2><a name="Getting_more_information"></a>Getting more information</h2>
+<p>A big source of samples of jx tags usage can be found in jxls-core module unit tests. Take a look at various templates to see how they are built.
+            If you are stuck do not hesitate to write on jXLS forum or send a message to jXLS mailing list.</p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

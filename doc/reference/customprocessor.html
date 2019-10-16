@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Customizing jXLS output</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+              <strong>Custom Processor</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>In this section you will see how you can customize result workbook during XLS transformation.
+            For example you may want to change style of some cells dynamically depending on exported data.
+            Or you may want to change values of some bean properties for example to scale them or do something else.</p>
+<p>Many of this can be done using Excel conditional formatting or macros. jXLS provides alternative way
+            to do this with custom cell and row processors.</p>
+</div>
+<div class="section"><h2><a name="Row_Processor"></a>Row Processor</h2>
+<p>You may implement <code>RowProcessor</code> interface if you need to set style for some row
+                dynamically. The interface contains single method
+                <code>void processRow(Row row, Map namedCells)</code>.
+            XLSTransformer invokes this method for every registered CellProcessor and passes to it two parameters:
+            </p>
+<ul><li><code>Row row</code> - contains all information about the current processed row
+                </li>
+<li><code>Map namedCells</code> - contains all named cells that were found during processing of previous cells
+                </li>
+</ul>
+<p>With <code>Row</code> object you have access to related <a class="externalLink" href="http://poi.apache.org/">POI</a>
+                objects to modify cell style if required. </p>
+<p> Let's take a look at <code>StyleRowProcessor</code> class from <a href="../samples/dynamicstylesample.html">Row Style sample</a>.
+                This class allows to highlight some rows containing employee information for all employees with payment greater than 2000.
+            </p>
+<div class="source"><pre>
+public class StyleRowProcessor implements RowProcessor {
+    String collectionName;
+    String styleCellLabel = &quot;customRow&quot;;
+
+    public StyleRowProcessor(String collectionName) {
+        this.collectionName = collectionName;
+    }
+
+    public void processRow(Row row, Map namedCells) {
+        // check if processed row has a parent row
+        if( row.getParentRow()!=null ){
+            // Processed row has parent row. It means we are processing some collection item
+            RowCollection rowCollection = row.getParentRow().getRowCollectionByCollectionName( collectionName );
+            if( rowCollection.getIterateObject() instanceof Employee){
+                Employee employee = (Employee) rowCollection.getIterateObject();
+                if( employee.getPayment().doubleValue() &gt;= 2000 ){
+                    if( namedCells.containsKey( styleCellLabel ) ){
+                        Cell customCell = (Cell) namedCells.get( styleCellLabel );
+                        for (int i = 0; i &lt; row.getCells().size(); i++) {
+                            Cell cell = (Cell) row.getCells().get(i);
+                            org.apache.poi.ss.usermodel.Cell hssfCell = cell.getHssfCell();
+                            if( hssfCell!=null ){
+                                copyStyle( row.getHssfWorkbook(), customCell.getHssfCell(), hssfCell );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+            </pre>
+</div>
+<p>You can see that in <code>processRow()</code> method we check does current row have parent row </p>
+<div class="source"><pre>
+// check if processed row has a parent row
+if( row.getParentRow()!=null ){
+....
+            </pre>
+</div>
+<p>The point is that for every row that is being processed as collection item <code>XLSTransformer</code>
+            sets <code>parentRow</code> property with information about base row containing current collection details.</p>
+<p>Then we get <code>RowCollection</code> object related to our collection in question using
+                <code>getRowCollectionByCollectionName( collectionName )</code> method of <code>Row</code> class</p>
+<div class="source"><pre>
+// Processed row has parent row. It means we are processing some collection item
+RowCollection rowCollection = row.getParentRow().getRowCollectionByCollectionName( collectionName );
+            </pre>
+</div>
+<p>After that we check that current iterated object is of required type and cast current collection item
+                to <code>Employee</code> class. And then we check its payment property</p>
+<div class="source"><pre>
+if( rowCollection.getIterateObject() instanceof Employee){
+    Employee employee = (Employee) rowCollection.getIterateObject();
+    if( employee.getPayment().doubleValue() &gt;= 2000 ){ ... }
+            </pre>
+</div>
+<p>Then we trying to find named cell with name <code>styleCellLabel</code> that is equal to <code>&quot;customRow&quot;</code></p>
+<div class="source"><pre>
+if( namedCells.containsKey( styleCellLabel ) ){
+    Cell customCell = (Cell) namedCells.get( styleCellLabel );
+            </pre>
+</div>
+<p>Then we walk through all <code>Cell</code> objects for current row and copy
+            cell style from named cell to current cell</p>
+<div class="source"><pre>
+for (int i = 0; i &lt; row.getCells().size(); i++) {
+    Cell cell = (Cell) row.getCells().get(i);
+    org.apache.poi.ss.usermodel.Cell hssfCell = cell.getHssfCell();
+    if( hssfCell!=null ){
+        copyStyle( row.getHssfWorkbook(), customCell.getHssfCell(), hssfCell );
+    }
+}
+            </pre>
+</div>
+<p>Method <code>copyStyle(..)</code> is rather simple and just copies cell style from one cell to another.
+            See <a href="../samples/dynamicstylesample.html">Row Style sample</a> for the actual code.</p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

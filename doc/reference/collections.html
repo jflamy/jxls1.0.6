@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Collections</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+              <strong>Collections</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Introduction"></a>Introduction</h2>
+<p>This section specifies how to export collections with jXLS in a simplest way.
+            Currently it is recommended to use <code>&lt;jx:forEach&gt;</code> tag to export collections. See <a href="tags.html#foreach">Using tags</a> section for details.
+            Another option is to export every collection item into a separate excel worksheet. See <a href="dynamicsheets.html">Dynamic sheets</a> section for details.
+            </p>
+<p>We assume that we have two dependent Java beans of type
+                <a href="../samples/departmentbean.html">Department</a> and
+                <a href="../samples/employeebean.html">Employee</a> which are passed to XLSTransformer in a code like this
+            </p>
+<div class="source"><pre>
+				        Department department;
+				        ... //initialization
+				        Map beans = new HashMap();
+				        beans.put(&quot;department&quot;, department);
+				        XLSTransformer transformer = new XLSTransformer();
+				        transformer.transformXLS(xlsTemplateFileName, beans, outputFileName);
+            </pre>
+</div>
+</div>
+<div class="section"><h2><a name="Collection_Property_Access"></a>Collection Property Access</h2>
+<p>Collection properties can be specified in the same way as ordinary properties but will be processed differently.
+			Usually we don' know the size of collection in the time we create XLS template and it should be determined during execution of application.
+			jXLS engine will iterate specified collection and insert a new row for each collection item preserving original row style. All related collection properties in these rows will be set to corresponding collection item property values.
+			All other cells will be processed as usual. For example, to access the names and the payment of all employees in the staff of some department we can write XLS template in the way</p>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="b"><td><strong>1</strong></td>
+<td><strong>Employee Name</strong></td>
+<td><strong>Employee Payment</strong></td>
+</tr>
+<tr class="a"><td><strong>2</strong></td>
+<td>${department.staff.name}</td>
+<td>${department.staff.payment}</td>
+</tr>
+</table>
+<p>We'll get an output like</p>
+<table class="bodyTable"><tr class="b"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="a"><td><strong>1</strong></td>
+<td><strong>Employee Name</strong></td>
+<td><strong>Employee Payment</strong></td>
+</tr>
+<tr class="b"><td><strong>2</strong></td>
+<td>John</td>
+<td>3000</td>
+</tr>
+<tr class="a"><td><strong>2</strong></td>
+<td>Neil</td>
+<td>2000</td>
+</tr>
+<tr class="b"><td><strong>2</strong></td>
+<td>Oleg</td>
+<td>2500</td>
+</tr>
+</table>
+</div>
+<div class="section"><h2><a name="Fixed_Size_Collections"></a>Fixed Size Collections</h2>
+<p>If you know the size of exported collection you may want not to create new row for every collection item but to export all collection to the rows already presented in XLS template. This can be done using
+                <em>fixed size collection</em> feature.
+            </p>
+<p>In this case the template should be as follows (assuming
+                <code>employee</code> is a collection with 3 items)
+            </p>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="b"><td><strong>1</strong></td>
+<td><strong>Employee Name</strong></td>
+<td><strong>Employee Payment</strong></td>
+</tr>
+<tr class="a"><td><strong>2</strong></td>
+<td>${employee.name}</td>
+<td>${employee.payment}</td>
+</tr>
+<tr class="b"><td><strong>3</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="a"><td><strong>4</strong></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>To indicate that
+                <code>employee</code> is a
+                <em>fixed size collection</em> we have to invoke
+                <code>markAsFixedSizeCollection</code> method of
+                <code>XLSTransformer</code>.
+            </p>
+<div class="source"><pre>
+			        List staff = new ArrayList();
+			        staff.add(new Employee(&quot;Derek&quot;, 35, 3000, 0.30));
+			        staff.add(new Employee(&quot;Elsa&quot;, 28, 1500, 0.15));
+			        staff.add(new Employee(&quot;Oleg&quot;, 32, 2300, 0.25));
+			        Map beans = new HashMap();
+			        beans.put(&quot;employee&quot;, staff);
+			        XLSTransformer transformer = new XLSTransformer();
+			        transformer.markAsFixedSizeCollection(&quot;employee&quot;);
+			        transformer.transformXLS(templateFileName, beans, destFileName);
+            </pre>
+</div>
+<p>For the code and  template above we will get an output of
+                <code>employee</code> collection into the existing template rows.
+            </p>
+<table class="bodyTable"><tr class="b"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="a"><td><strong>1</strong></td>
+<td><strong>Employee Name</strong></td>
+<td><strong>Employee Payment</strong></td>
+</tr>
+<tr class="b"><td><strong>2</strong></td>
+<td>Derek</td>
+<td>3000.0</td>
+</tr>
+<tr class="a"><td><strong>3</strong></td>
+<td>Elsa</td>
+<td>1500.0</td>
+</tr>
+<tr class="b"><td><strong>4</strong></td>
+<td>Oleg</td>
+<td>2300.0</td>
+</tr>
+</table>
+<p>See also
+                <a href="../samples/chartsample.html">Chart sample</a>.
+            </p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

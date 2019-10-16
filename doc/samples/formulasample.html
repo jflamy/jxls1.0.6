@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Formulas Export</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<warning>This section is outdated. Please refer to <a href="tagsample.html">Basic Tags sample</a> on how to use
+            formulas in jXLS templates. And also it is recommended to read corresponding reference section <a href="../reference/formulas.html#newcellrefnotation">Formulas</a></warning><p>
+                This section demonstrates how to export formulas with
+                <a class="externalLink" href="http://jxls.sourceforge.net">jXLS</a>. Formulas notation is described in
+                <a href="../reference/formulas.html">reference section</a>.
+				All samples use two Java beans of type
+                <a href="departmentbean.html">Department</a> and
+                <a href="employeebean.html">Employee</a></p>
+</div>
+<div class="section"><h2><a name="Formulas"></a>Formulas</h2>
+<p>Sample
+                <strong>Department</strong> along with many other jXLS features demonstrates how to use formulas in XLS template. Source code snippet
+            </p>
+<div class="source"><pre>
+                Department department = new Department(&quot;IT&quot;);
+                //...  initialization is skipped here
+                    Map beans = new HashMap();
+                    beans.put(&quot;department&quot;, department);
+                    XLSTransformer transformer = new XLSTransformer();
+                    // set grouping of rows for &quot;department.staff&quot; collection
+                    transformer.groupCollection(&quot;department.staff&quot;);
+                    transformer.transformXLS(templateFileName, beans, destFileName);
+            </pre>
+</div>
+<p>Here is a template file screenshot </p>
+<img src="../images/departmentTemplateXLS.gif" alt="Screenshot of Department XLS template file" /><p>Excel version is here
+                <a href="../xls/department.xls">department.xls</a></p>
+<p>Using this template we'll get an output like</p>
+<img src="../images/departmentOutputXLS.gif" alt="Screenshot of Department XLS output" /><p> Excel is here
+                <a href="../xls/department_output.xls">department_output.xls</a></p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

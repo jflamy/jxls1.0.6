@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Reading XLS files</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+              <strong>XLS Reader</strong>
+        </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>jXLS provides <strong>jxls-reader</strong> module to read XLS files and populate Java beans
+                with spreadsheet data.
+            </p>
+</div>
+<div class="section"><h2><a name="Usage_Details"></a>Usage Details</h2>
+<p>To use jXLS to parse excel files and populate your Java objects with read data you have to construct XLSReader object first.
+                The easiest way to do this is to use a special XML configuration file.
+            We will use <a href="../xls/departmentdata.xls">departmentdata.xls</a> file with department data to demonstrate this method  </p>
+<div class="section"><h2><a name="Construction_of_XLSReader_using_XML_config_file"></a>Construction of XLSReader using XML config file</h2>
+<p>   Mapping between spreadsheet cells and Java objects is configured in XML file. Mapping file structure is rather straightforward.
+                Let's take a look at xml mapping file for 'Sheet1' of our <a href="../xls/departmentdata.xls">departmentdata.xls</a> sample file </p>
+<div class="source"><pre>
+                    &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+                    &lt;workbook&gt;
+                        &lt;worksheet name=&quot;Sheet1&quot;&gt;
+                            &lt;section startRow=&quot;0&quot; endRow=&quot;6&quot;&gt;
+                                &lt;mapping cell=&quot;B1&quot;&gt;department.name&lt;/mapping&gt;
+                                &lt;mapping cell=&quot;A4&quot;&gt;department.chief.name&lt;/mapping&gt;
+                                &lt;mapping cell=&quot;B4&quot;&gt;department.chief.age&lt;/mapping&gt;
+                                &lt;mapping cell=&quot;D4&quot;&gt;department.chief.payment&lt;/mapping&gt;
+                                &lt;mapping row=&quot;3&quot; col=&quot;4&quot;&gt;department.chief.bonus&lt;/mapping&gt;
+                            &lt;/section&gt;
+                            &lt;loop startRow=&quot;7&quot; endRow=&quot;7&quot; items=&quot;department.staff&quot; var=&quot;employee&quot; varType=&quot;net.sf.jxls.reader.sample.Employee&quot;&gt;
+                                &lt;section startRow=&quot;7&quot; endRow=&quot;7&quot;&gt;
+                                    &lt;mapping row=&quot;7&quot; col=&quot;0&quot;&gt;employee.name&lt;/mapping&gt;
+                                    &lt;mapping row=&quot;7&quot; col=&quot;1&quot;&gt;employee.age&lt;/mapping&gt;
+                                    &lt;mapping row=&quot;7&quot; col=&quot;3&quot;&gt;employee.payment&lt;/mapping&gt;
+                                    &lt;mapping row=&quot;7&quot; col=&quot;4&quot;&gt;employee.bonus&lt;/mapping&gt;
+                                &lt;/section&gt;
+                                &lt;loopbreakcondition&gt;
+                                    &lt;rowcheck offset=&quot;0&quot;&gt;
+                                        &lt;cellcheck offset=&quot;0&quot;&gt;Employee Payment Totals:&lt;/cellcheck&gt;
+                                    &lt;/rowcheck&gt;
+                                &lt;/loopbreakcondition&gt;
+                            &lt;/loop&gt;
+                        &lt;/worksheet&gt;
+                    &lt;/workbook&gt;
+                </pre>
+</div>
+<p>As we can see the root element of xml file is <strong>workbook</strong> and it can contain any number of child <strong>worksheet</strong>
+                    elements. <strong>worksheet</strong> tag should contain <strong>name</strong> attribute indicating the name of excel worksheet which it describes (Sheet1 in our case).
+                </p>
+<p><strong>worksheet</strong> element can contain any number of <strong>section</strong> and <strong>loop</strong> child elements.</p>
+<p><strong>section</strong> element represents a simple block of spreadsheet cells. The first and the last rows of the block are
+                specified with <strong>startRow</strong> and <strong>endRow</strong> attributes</p>
+<note> In the current version you have to specify sections for the whole excel sheet so that it is completely broken down into sections.
+                It means that even if you are not going to read for example the first rows of the sheet you need to create an empty section (a section without mappings but with startRow/endRow attributes)
+                    so that these rows are reflected in XML file. The unnecessary rows will be skipped and all other sections will be read as required.</note><p>Mapping of XLS cells onto Java bean properties is defined using <strong>mapping</strong> tag which looks like following </p>
+<div class="source"><pre>
+                        &lt;mapping cell=&quot;B1&quot;&gt;department.name&lt;/mapping&gt;
+                </pre>
+</div>
+<p>You also can use <strong>cell</strong> attribute to specify mapped cell and the body of the tag for a full property name
+                to populate from this cell. By full property name we mean bean name concatenated with property name like department.name or department.chief.payment .
+                Another option to specify mapped cell is to use cell row and column numbers (zero-based) </p>
+<div class="source"><pre>
+                    &lt;mapping row=&quot;3&quot; col=&quot;4&quot;&gt;department.chief.bonus&lt;/mapping&gt;
+                </pre>
+</div>
+<p>This defines mapping for E4 cell and maps it to department.chief.bonus property.</p>
+<p><strong>loop</strong> element defines loop (repetitive) block of excel rows. It should contain startRow and endRow attributes
+                to specify start and end row of this repetitive block. <strong>items</strong> attribute names collection which should be populated with loop block data
+                as it is known in our bean context map. <strong>var</strong> attribute specifies how to refer to each collection item during iteration in the inner sections.
+                <strong>varType</strong> attribute defines full Java class name for collection item.</p>
+<div class="source"><pre>
+                    &lt;loop startRow=&quot;7&quot; endRow=&quot;7&quot; items=&quot;department.staff&quot; var=&quot;employee&quot; varType=&quot;net.sf.jxls.reader.sample.Employee&quot;&gt;
+                </pre>
+</div>
+<p><strong>loop</strong> element can contain any number of inner <strong>section</strong> and <strong>loop</strong> elements and have to contain
+                <strong>loopbreakcondition</strong> definition. This describes break condition to stop loop iteration. In our sample it is as simple as specifying that
+                next row after employees data must contain &quot;Employee Payment Totals:&quot; string in the first cell </p>
+<div class="source"><pre>
+                    &lt;loopbreakcondition&gt;
+                        &lt;rowcheck offset=&quot;0&quot;&gt;
+                            &lt;cellcheck offset=&quot;0&quot;&gt;Employee Payment Totals:&lt;/cellcheck&gt;
+                        &lt;/rowcheck&gt;
+                    &lt;/loopbreakcondition&gt;
+                </pre>
+</div>
+<p>This is all you need to know to create XML mapping configuration file. Next is a simple sample of code which uses ReaderBuilder
+                class to apply <a href="../xml/departments.xml">XML mapping file</a> to <a href="../xls/departmentdata.xls">departmentdata.xls</a>
+                    to construct XLSReader class and read XLS data populating corresponding Java beans with XLS data</p>
+<div class="source"><pre>
+                    InputStream inputXML = new BufferedInputStream(getClass().getResourceAsStream(xmlConfig));
+                    XLSReader mainReader = ReaderBuilder.buildFromXML( inputXML );
+                    InputStream inputXLS = new BufferedInputStream(getClass().getResourceAsStream(dataXLS));
+                    Department department = new Department();
+                    Department hrDepartment = new Department();
+                    List departments = new ArrayList();
+                    Map beans = new HashMap();
+                    beans.put(&quot;department&quot;, department);
+                    beans.put(&quot;hrDepartment&quot;, hrDepartment);
+                    beans.put(&quot;departments&quot;, departments);
+                    XLSReadStatus readStatus = mainReader.read( inputXLS, beans);
+                </pre>
+</div>
+</div>
+</div>
+<div class="section"><h2><a name="Sheet_mapping_by_index"></a>Sheet mapping by index</h2>
+<p>As of version 1.0.2 jxls-reader supports mapping of sheets by index. This can be convenient in case you do not know the names of the sheets.
+            In this case the mapping file will look like this</p>
+<div class="source"><pre>
+                &lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+                &lt;workbook&gt;
+                &lt;worksheet idx=&quot;0&quot;&gt;
+                &lt;section startRow=&quot;0&quot; endRow=&quot;6&quot;&gt;
+                &lt;mapping cell=&quot;B1&quot;&gt;department.name&lt;/mapping&gt;
+                &lt;mapping cell=&quot;A4&quot;&gt;department.chief.name&lt;/mapping&gt;
+                &lt;mapping cell=&quot;B4&quot;&gt;department.chief.age&lt;/mapping&gt;
+                &lt;mapping cell=&quot;D4&quot;&gt;department.chief.payment&lt;/mapping&gt;
+                &lt;mapping row=&quot;3&quot; col=&quot;4&quot;&gt;department.chief.bonus&lt;/mapping&gt;
+                &lt;/section&gt;
+                &lt;loop startRow=&quot;7&quot; endRow=&quot;7&quot; items=&quot;department.staff&quot; var=&quot;employee&quot; varType=&quot;net.sf.jxls.reader.sample.Employee&quot;&gt;
+                &lt;section startRow=&quot;7&quot; endRow=&quot;7&quot;&gt;
+                &lt;mapping row=&quot;7&quot; col=&quot;0&quot;&gt;employee.name&lt;/mapping&gt;
+                &lt;mapping row=&quot;7&quot; col=&quot;1&quot;&gt;employee.age&lt;/mapping&gt;
+                &lt;mapping row=&quot;7&quot; col=&quot;3&quot;&gt;employee.payment&lt;/mapping&gt;
+                &lt;mapping row=&quot;7&quot; col=&quot;4&quot;&gt;employee.bonus&lt;/mapping&gt;
+                &lt;/section&gt;
+                &lt;loopbreakcondition&gt;
+                &lt;rowcheck offset=&quot;0&quot;&gt;
+                &lt;cellcheck offset=&quot;0&quot;&gt;Employee Payment Totals:&lt;/cellcheck&gt;
+                &lt;/rowcheck&gt;
+                &lt;/loopbreakcondition&gt;
+                &lt;/loop&gt;
+                &lt;/worksheet&gt;
+                &lt;/workbook&gt;
+            </pre>
+</div>
+<p>So instead of using <code>name</code> attribute for <code>worksheet</code> tag we now can use <code>idx</code> attribute to specify sheet index.
+            The sheet index is zero based.</p>
+</div>
+<div class="section"><h2><a name="Error_Processing"></a>Error Processing</h2>
+<p>By default jXLS throws <code>XLSDataReadException</code> if it fails to read some cell value and stops further processing.</p>
+<p>You can override this behaviour and allow to skip errors and continue processing with <code>setSkipErrors(true)</code> method of <code>ReaderConfig</code> class.
+                You get an instance of <code>ReaderConfig</code> class using <code>ReaderConfig.getInstance()</code> method.
+            </p>
+<div class="source"><pre>
+                ReaderConfig.getInstance().setSkipErrors( true );
+            </pre>
+</div>
+<p>All the error messages are stored in <code>XLSReadStatus</code> object which is returned from <code>read</code> method.
+            <code>XLSDataReadException</code> also contains a reference to this object. You can analyse  <code>XLSReadMessage</code>
+                objects after getting them from <code>XLSReadStatus</code> using <code>getReadMessages()</code> method. 
+            </p>
+</div>
+<div class="section"><h2><a name="Conversion_Mechanism"></a>Conversion Mechanism</h2>
+<p>
+                jXLS integrates with Jakarta BeanUtils conversion utilities to perform actual conversion from Excel cell values into bean properties.
+                See more about this in <a class="externalLink" href="http://commons.apache.org/beanutils/apidocs/org/apache/commons/beanutils/ConvertUtils.html">ConvertUtils</a>.
+                jXLS uses standard converters for primitive types provided by <code>org.apache.commons.beanutils.converters</code> package.
+                For <code>java.util.Date</code> type we provide a custom <code>DateConverter</code> which uses POI utility methods to convert from Excel date
+                representation into <code>Date</code> class.
+            </p>
+<p>BeanUtils Converters for primitive types return a default value when a conversion error occurs. jXLS overrides this behaviour
+            in <code>ReaderConfig</code> class registering these classes to throw a ConversionException. You can use
+            <code>setUseDefaultValuesForPrimitiveTypes(true)</code> method of <code>ReaderConfig</code> class if you prefer these classes to use
+            a default value. For example
+            </p>
+<div class="source"><pre>
+                ReaderConfig.getInstance().setUseDefaultValuesForPrimitiveTypes( true );
+            </pre>
+</div>
+<p>
+                To define your own converters from an excel cell into your own property type you should implement
+                <a class="externalLink" href="http://commons.apache.org/beanutils/apidocs/org/apache/commons/beanutils/Converter.html">Converter</a> interface
+                and register your converter with <a class="externalLink" href="http://commons.apache.org/beanutils/apidocs/org/apache/commons/beanutils/ConvertUtils.html">ConvertUtils</a> class.
+            </p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

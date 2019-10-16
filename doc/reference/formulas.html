@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Formulas Notation</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+              <strong>Formulas Notation</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>This section demonstrates how to apply different formulas to your exported data. First any static Excel formulas (which are supported by
+                <a class="externalLink" href="http://poi.apache.org/">POI</a>) will be copied  to result Excel file untouched.
+			 But if you want to apply formula to dynamic data like exported collections you have to use predefined notation.
+			Any cell with value starting with
+                <strong><code>$[</code></strong> and ending with
+                <strong><code>]</code></strong> will be rendered as a formula cell. For example
+            </p>
+<div class="source"><pre>
+				$[formula]
+            </pre>
+</div>
+<p>where
+                <code>formula</code> is the real formula which will be processed by jXLS engine.
+            </p>
+</div>
+<div class="section"><h2><a name="Formula_Cell_References_notation."></a>Formula Cell References notation.</h2>
+<p>When you reference a worksheet cell in a jXLS formula and that cell is transformed into some other cell or
+               a set of cells the cell reference in the formula will be updated accordingly.
+                For example if you have a formula like
+            </p>
+<div class="source"><pre>
+            		       	$[E5 + B4 * 5]
+            </pre>
+</div>
+<p>
+                And after jXLS transformation cell E5 turns to E20 and cell B4 turns to cell B15 the result formula will look like
+            </p>
+<div class="source"><pre>
+            			E20 + B15 * 5
+            </pre>
+</div>
+<p>Let's consider more complex sample where a source cell was duplicated and turned into several cells forming a cell range.
+            For example if we have a formula like </p>
+<div class="source"><pre>
+                $[SUM(C2)]
+            </pre>
+</div>
+<p>and cell C2 turns into a set of cells C2, C3, C4, C5, C6. This can happen for example if cell C2 is contained in jx:forEach tag body.
+            In this case jXLS detects that result cells form a range C2:C6 and replaces the original cell reference with this range </p>
+<div class="source"><pre>
+                SUM(C2:C6)
+            </pre>
+</div>
+<p>jXLS also detects column ranges like A5:E5 when result cells are A5, B5, C5, D5, E5.</p>
+<p>If result cells do not form any cell range original cell will be replaced with list of all cells separated with commas. If in previous
+            example cell C2 is transformed into cells C2, C3, C4, C10, C11, C20 result formula will look like</p>
+<div class="source"><pre>
+                SUM(C2,C3,C4,C10,C11,C20)
+            </pre>
+</div>
+<p>Also you can reference cells from different worksheets in a formula cell. For example you can have following formula
+            referencing cells from other worksheets</p>
+<div class="source"><pre>
+                $[SUM(Sheet2!B10) - 'Sheet 1'!D15]
+            </pre>
+</div>
+<p>jXLS updates formula cell references throughout the workbook during excel template transformation. It means
+            for example that any transformation that changes cell original location will reflect new cell location
+            in all affected formulas. If we have <code>jx:forEach</code> tag like this</p>
+<div class="source"><pre>
+                &lt;jx:forEach items=&quot;${employees}&quot; var=&quot;employee&quot;&gt;
+                ${employee.name} | ${employee.payment}
+                &lt;jx:forEach&gt;
+            </pre>
+</div>
+<p>And assuming that before transformation ${employee.payment} was located in a cell <code>B5</code> and after transformation
+            we have employee payments in all cells from <code>B5</code> to <code>B10</code> then if any other cell references
+            original cell <code>B5</code> like for example <code>$[SUM(B5)]</code> then all such formulas will be updated.
+                In this case we will get a formula like <code>SUM(B5:B10)</code>.
+           </p>
+</div>
+<div class="section"><h2><a name="Default_Formula_Values"></a>Default Formula Values</h2>
+<p>
+            Sometime you may have a situation when all cells referenced in your formula are removed from the sheet.
+            For example it can happen when formula references a cell inside jx:forEach tag and the collection is empty.
+            To deal with this situation you can use <code>@</code> symbol to define default formula value.
+            Default formula value will replace the formula only in that case when all underlying cell references were removed during processing.
+            </p>
+<p>Example</p>
+<div class="source"><pre>
+            $[SUM(B6) + SUM(B13)@0 + (SUM(B20)@0) +SUM(B27)@0 + SUM(B34)]
+            </pre>
+</div>
+<p>Assuming cells B13 and B27 were removed during transformation you will get Excel output similar to this </p>
+<div class="source"><pre>
+                =SUM(B5:B9)+0+(SUM(B18:B21))+0+SUM(B30:B32)
+            </pre>
+</div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

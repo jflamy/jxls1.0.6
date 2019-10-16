@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Dynamic Style samples</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+              <strong>Dynamic Style</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>This section contains samples demonstrating how to dynamically change style of some cells during export</p>
+</div>
+<div class="section"><h2><a name="Row_Style_sample"></a>Row Style sample</h2>
+<p>This sample demonstrates how to use custom <code>RowProcessor</code> to higlight rows for all employees
+                with payment greater than <code>2000</code>.
+                See also <a href="../reference/customprocessor.html#rowprocessor">Customizing jXLS output</a> reference section for details on writing custom <code>RowProcessor</code>.</p>
+<p>In this sample we have <code>StyleRowProcessor</code> class implementing <code>RowProcessor</code> interface</p>
+<div class="source"><pre>
+public class StyleRowProcessor implements RowProcessor {
+
+    String collectionName;
+    String styleCellLabel = &quot;customRow&quot;;
+
+    public StyleRowProcessor(String collectionName) {
+        this.collectionName = collectionName;
+    }
+
+    public void processRow(Row row, Map namedCells) {
+        // check if processed row has a parent row
+        if( row.getParentRow()!=null ){
+            // Processed row has parent row. It means we are processing some collection item
+            RowCollection rowCollection = row.getParentRow().getRowCollectionByCollectionName( collectionName );
+            if( rowCollection.getIterateObject() instanceof Employee){
+                Employee employee = (Employee) rowCollection.getIterateObject();
+                if( employee.getPayment().doubleValue() &gt;= 2000 ){
+                    if( namedCells.containsKey( styleCellLabel ) ){
+                        Cell customCell = (Cell) namedCells.get( styleCellLabel );
+                        for (int i = 0; i &lt; row.getCells().size(); i++) {
+                            Cell cell = (Cell) row.getCells().get(i);
+                            HSSFCell hssfCell = cell.getHssfCell();
+                            if( hssfCell!=null ){
+                                copyStyle( row.getHssfWorkbook(), customCell.getHssfCell(), hssfCell );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void copyStyle(HSSFWorkbook workbook, HSSFCell fromCell, HSSFCell toCell){
+        HSSFCellStyle toStyle = toCell.getCellStyle();
+        HSSFCellStyle fromStyle = fromCell.getCellStyle();
+        if( fromStyle.getDataFormat() == toStyle.getDataFormat() ){
+            toCell.setCellStyle( fromStyle );
+        }else{
+            HSSFCellStyle newStyle = workbook.createCellStyle();
+            newStyle.setAlignment( toStyle.getAlignment() );
+            newStyle.setBorderBottom( toStyle.getBorderBottom() );
+            newStyle.setBorderLeft( toStyle.getBorderLeft() );
+            newStyle.setBorderRight( toStyle.getBorderRight() );
+            newStyle.setBorderTop( toStyle.getBorderTop() );
+            newStyle.setBottomBorderColor( toStyle.getBottomBorderColor() );
+            newStyle.setDataFormat( toStyle.getDataFormat() );
+            newStyle.setFillBackgroundColor( fromStyle.getFillBackgroundColor() );
+            newStyle.setFillForegroundColor( fromStyle.getFillForegroundColor() );
+            newStyle.setFillPattern( fromStyle.getFillPattern() );
+            newStyle.setFont( workbook.getFontAt( fromStyle.getFontIndex() ) );
+            newStyle.setHidden( toStyle.getHidden() );
+            newStyle.setIndention( toStyle.getIndention() );
+            newStyle.setLeftBorderColor( toStyle.getLeftBorderColor() );
+            newStyle.setLocked( toStyle.getLocked() );
+            newStyle.setRightBorderColor( toStyle.getRightBorderColor() );
+            newStyle.setTopBorderColor( toStyle.getTopBorderColor() );
+            newStyle.setVerticalAlignment( toStyle.getVerticalAlignment() );
+            newStyle.setWrapText( toStyle.getWrapText() );
+            toCell.setCellStyle( newStyle );
+        }
+    }
+}
+            </pre>
+</div>
+<p> In <code>StyleRowSample</code> class we create <code>StyleRowProcessor</code> object and register it with XLSTransformer.	</p>
+<div class="source"><pre>
+            Map beans = new HashMap();
+            beans.put(&quot;department&quot;, department);
+            XLSTransformer transformer = new XLSTransformer();
+            transformer.registerRowProcessor(new StyleRowProcessor(&quot;department.staff&quot;));
+            transformer.transformXLS(templateFileName, beans, destFileName);
+            </pre>
+</div>
+<p>The first row in XLS template is hidden. And its first cell contains custom style to use for highligting.</p>
+<p>Take a look at screenshot of template</p>
+<img src="../images/rowstyleTemplateXLS.gif" alt="Screenshot of RowStyle sample XLS template file" /><p>See excel version
+                <a href="../xls/rowstyle.xls">rowstyle.xls</a></p>
+<p>Sample output screenshot is </p>
+<img src="../images/rowstyleOutputXLS.gif" alt="Screenshot of RowStyle sample output" /><p> Excel version is
+                <a href="../xls/rowstyle_output.xls">rowstyle_output.xls</a></p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

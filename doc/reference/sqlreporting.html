@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - SQL Reporting</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+              <strong>SQL Reporting</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>Excel reporting plays very important role in many enterprise applications. Now jXLS allows you to
+                place SQL queries directly into XLS template to be executed during template transformation so that
+                all query results are available in your excel report.
+            </p>
+</div>
+<div class="section"><h2><a name="Execution_of_SQL_queries"></a>Execution of SQL queries</h2>
+<p>To execute your SQL query and display its results in your excel file you have to put a special bean implementing
+                <code>ReportManager</code> interface into the bean context before running transformation. Currently this interface
+                    has the only method </p>
+<div class="source"><pre>public List exec(String sql) throws SQLException</pre>
+</div>
+<p> This method should take SQL query and execute it returning required results as a list of beans. </p>
+<p>jXLS provides a default implementation of this interface called <code>ReportManagerImpl</code>
+                     which uses <code>RowSetDynaClass</code> to wrap ResultSet object into collections of objects.
+                     This technique is described in the <a href="resultset.html">JDBC resultset</a> section.
+                The usage of this class can be as following </p>
+<div class="source"><pre>
+                    Connection conn = ...// get database connection in some way
+                    Map beans = new HashMap();
+                    ReportManager rm = new ReportManagerImpl( conn, beans );
+                    beans.put(&quot;rm&quot;, rm);
+                    InputStream is = new BufferedInputStream(new FileInputStream(&quot;reportTemplate.xls&quot;));
+                    XLSTransformer transformer = new XLSTransformer();
+                    HSSFWorkbook resultWorkbook = transformer.transformXLS(is, beans);
+                </pre>
+</div>
+<p>Here we see that <code>ReportManagerImpl</code> constructor takes database connection object
+                and the map of beans passed to XLSTransformer as parameters. Then we place ReportManager object into
+                the bean context using &quot;rm&quot; key. It means that in XLS template we will be able to execute any SQL
+                query by passing it to <code>rm.exec()</code> method as a parameter. For example </p>
+<div class="source"><pre>
+                    ${rm.exec(&quot;SELECT name, age FROM employee&quot;)}
+                </pre>
+</div>
+<p>Usually it will be used in conjunction with <code>jx:forEach</code> tag to iterate
+                ResultSet beans collection and display it in your excel. For example </p>
+<div class="source"><pre>
+                    &lt;jx:forEach items=&quot;${rm.exec('SELECT e.name, e.age, e.payment FROM employee e')}&quot; var=&quot;employee&quot;&gt;
+                    ${employee.name} | ${employee.age} | ${employee.payment}
+                    &lt;/jx:forEach&gt;
+                </pre>
+</div>
+<p>You can use <code>groupBy</code> attribute of <code>jx:forEach</code> to group query results
+                by some column values. See <a href="tags.html#foreachGroup">Grouping data with jx:forEach tag</a> section for details.</p>
+<p>See <a href="../samples/reportsample.html">Reporting Sample</a> for real sample.</p>
+</div>
+<div class="section"><h2><a name="Dependent_SQL_queries"></a>Dependent SQL queries</h2>
+<p>You should be able to pass any SQL queries to ReportManagerImpl if used jdbc driver supports them.</p>
+<p>You can also use the results of the one query in the next queries. This can be done by placing
+                the result of the first query into the bean context when processing so that it will be available
+                when constructing dependent query.</p>
+<p>Typical usage of dependent queries (or subqueries) can be demonstrated using two <code>jx:forEach</code>
+                tag where one of them is nested in the other. This is an example from <a href="../samples/reportsample.html">Reporting Sample</a></p>
+<div class="source"><pre>
+                &lt;jx:forEach  items=&quot;${rm.exec('SELECT d.name, d.id FROM department d')}&quot; var=&quot;dep&quot;&gt;
+                Department: ${dep.name}
+                Name | Payment | Bonus | Total
+                &lt;jx:forEach items=&quot;${rm.exec('SELECT name, age, payment, bonus, birthDate FROM employee e where e.depid = ' + dep.id)}&quot; var=&quot;employee&quot;&gt;
+                ${employee.empname} | ${employee.payment} | ${employee.bonus} | $[B23*(1+C23)]
+                &lt;/jx:forEach&gt;
+                &lt;/jx:forEach&gt;
+            </pre>
+</div>
+<p>Here we place each department we got from the first query into the context under <code>dep</code> key.
+            After that we use it in the inner <code>jx:forEach</code> tag</p>
+<div class="source"><pre>
+                &lt;jx:forEach items=&quot;${rm.exec('SELECT name, age, payment, bonus, birthDate FROM employee e where e.depid = ' + dep.id)}&quot; var=&quot;employee&quot;&gt;
+            </pre>
+</div>
+<p>jXLS will substitute the <code>id</code> value of currently processed department so that executed query will
+            select all the employees for the department.</p>
+</div>
+<div class="section"><h2><a name="Parameterized_queries._Queries_containing_quotes."></a>Parameterized queries. Queries containing quotes.</h2>
+<p>
+                Previous example already showed how to use a parameter inside SQL query. Also we can use an external parameter if we put
+                it into the bean context
+            </p>
+<div class="source"><pre>
+                Map beans = new HashMap();
+                ReportManager reportManager = new ReportManagerImpl( conn, beans );
+                beans.put(&quot;rm&quot;, reportManager);
+                beans.put(&quot;minDate&quot;, &quot;1979-01-01&quot;);
+                XLSTransformer transformer = new XLSTransformer();
+                transformer.transformXLS(templateFileName, beans, destFileName);
+            </pre>
+</div>
+<p>Here we put date value &quot;1979-01-01&quot; into the bean context under <code>minDate</code> key. Next is how we can use it to construct a query</p>
+<div class="source"><pre>
+        &lt;jx:forEach items=&quot;${rm.exec(&quot;SELECT d.name depname, e.name empname, age, payment, bonus, birthDate FROM employee e, department d WHERE d.id = e.depid AND birthDate &gt; '1975-01-01' AND birthDate &lt; '&quot; + minDate + &quot;' order by age desc&quot;)}&quot; var=&quot;employee&quot;&gt;
+            </pre>
+</div>
+<p>Also you can see how it is possible to use single quotes inside SQL query if needed.</p>
+<p>See usage sample in the <a href="../samples/reportsample.html#parameterizedquerieswithquotes">Reporting sample</a> section</p>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Reporting Sample</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+              <strong>Reporting Sample</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>This sample demonstrates usage of reporting techniques available in jXLS.
+                See also <a href="../reference/sqlreporting.html">SQL Reporting</a> section for detailed explanation of
+                how it works.
+            </p>
+<p>In the next sample we use two tables <code>employee</code> and <code>department</code>.
+                <code>id</code> column in the <code>department</code> table is referenced by foreign key <code>depid</code>
+                column from the <code>employee</code> table.
+                We use the same template to demonstrate several ways of using SQL queries to get required data.
+                The template can be found in here <a href="../xls/report.xls">report.xls</a>.
+                And the result is here <a href="../xls/report_output.xls">report_output.xls</a>.
+            </p>
+<div class="section"><h2><a name="Simple_Query"></a>Simple Query</h2>
+<p>This is an example of rather a simple query which joins <code>employee</code> and <code>department</code>
+                    tables to list all employees and their corresponding departments
+                </p>
+<div class="source"><pre>
+             &lt;jx:forEach items=&quot;${rm.exec('SELECT d.name depname, e.name empname, payment, bonus FROM employee e, department d where d.id = e.depid order by age desc')}&quot; var=&quot;employee&quot;&gt;
+             ${employee.empname} | ${employee.payment} | ${employee.bonus} | $[B4*(1+C4)] | ${employee.depname}
+             &lt;/jx:forEach&gt;
+                </pre>
+</div>
+<p>The screenshot is here </p>
+<img src="../images/reportOutput1XLS.gif" alt="Screenshot of simple query results output" /></div>
+<div class="section"><h2><a name="Grouping_Results"></a>Grouping Results</h2>
+<p>This sample demonstrates how to group the results of the previous join by department names</p>
+<div class="source"><pre>
+ &lt;jx:forEach items=&quot;${rm.exec('SELECT d.name depname, e.name empname, payment, bonus FROM employee e, department d where d.id = e.depid order by age desc')}&quot; groupBy=&quot;depname&quot;&gt;
+ Department: ${group.item.depname}
+ Name | Payment | Bonus | Total
+ &lt;jx:forEach items=&quot;${group.items}&quot; var=&quot;employee&quot;&gt;
+ ${employee.empname} | ${employee.payment} | ${employee.bonus} | $[B13*(1+C13)]
+ &lt;/jx:forEach&gt;
+ &lt;/jx:forEach&gt;
+                </pre>
+</div>
+<p>Result looks like</p>
+<img src="../images/reportOutput2XLS.gif" alt="Screenshot of Grouping Data XLS output" /></div>
+<div class="section"><h2><a name="Dependent_Queries"></a>Dependent Queries</h2>
+<p>This sample demonstrates how to execute dependent queries.
+                First we select all the departments using the next query</p>
+<div class="source"><pre>
+                    SELECT d.name, d.id FROM department d
+                </pre>
+</div>
+<p>Then we iterate the results and for each department executing a query to get all
+                employees for this department</p>
+<div class="source"><pre>
+                SELECT name, age, payment, bonus, birthDate FROM employee e where e.depid = dep.id
+                </pre>
+</div>
+<p>In the template it looks like this</p>
+<div class="source"><pre>
+ &lt;jx:forEach  items=&quot;${rm.exec('SELECT d.name, d.id FROM department d')}&quot; var=&quot;dep&quot;&gt;
+ Department: ${dep.name}
+ Name | Payment | Bonus | Total
+ &lt;jx:forEach items=&quot;${rm.exec('SELECT name, payment, bonus FROM employee e where e.depid = ' + dep.id)}&quot; var=&quot;employee&quot;&gt;
+ ${employee.empname} | ${employee.payment} | ${employee.bonus} | $[B23*(1+C23)]
+ &lt;/jx:forEach&gt;
+ &lt;/jx:forEach&gt;
+                </pre>
+</div>
+<p>Pay attention that we place every department in the <code>dep</code> object and
+                then use it in the dependent query as a parameter</p>
+<div class="source"><pre>
+                    'SELECT name, age, payment, bonus, birthDate FROM employee e where e.depid = ' + dep.id
+                </pre>
+</div>
+<p>Take care not to include <code>dep.id</code> into the quoted string as it will not be replaced by real value in such case.</p>
+<p>Result looks like</p>
+<img src="../images/reportOutput3XLS.gif" alt="Screenshot of Dependent Queries XLS output" /></div>
+<div class="section"><h2><a name="Parameterized_Queries._Queries_containing_quotes"></a>Parameterized Queries. Queries containing quotes</h2>
+<p>This sample shows how to use a parameter in SQL query and how to construct queries containing quotes</p>
+<p>Let assume we need to get all employees having birthdate between '1975-01-01' and some <code>minDate</code> parameter
+                which is set dynamically before report generation. In this case we have to pass required date to XLSTransformer
+                    with <code>minDate</code> key before transforming template</p>
+<div class="source"><pre>
+                    Map beans = new HashMap();
+                    ReportManager reportManager = new ReportManagerImpl( conn, beans );
+                    beans.put(&quot;rm&quot;, reportManager);
+                    beans.put(&quot;minDate&quot;, &quot;1979-01-01&quot;);
+                    XLSTransformer transformer = new XLSTransformer();
+                    transformer.transformXLS(templateFileName, beans, destFileName);
+                </pre>
+</div>
+<p>In the template we may invoke corresponding <code>rm.exec()</code> method using the following syntax </p>
+<div class="source"><pre>
+${rm.exec(&quot;SELECT d.name depname, e.name empname, age, payment, bonus, birthDate FROM employee e, department d WHERE d.id = e.depid AND birthDate &gt; '1975-01-01' AND birthDate &lt; '&quot; + minDate + &quot;' order by age desc&quot;)}
+                </pre>
+</div>
+<p>
+                 See the last section in the template file <a href="xls/report.xls">report.xls</a> and in the result output <a href="xls/report_output.xls">report_output.xls</a>
+                    to understand how the whole jx:forEach tag works in this case.
+                 The result looks like this</p>
+<img src="../images/reportOutput4XLS.gif" alt="Screenshot of Parameterized Query with quotes XLS output" /></div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

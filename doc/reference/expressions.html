@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Using Expressions</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/advancedcollections.html">Advanced Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+              <strong>Using Expressions</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>
+            Very often it is required to modify bean properties before placing them into excel cell.
+            For example you may want to scale or summarize some properties without using Excel formulas.
+            jXLS supports expression language syntax to perform achieve this.
+            </p>
+</div>
+<div class="section"><h2><a name="Expression_Language"></a>Expression Language</h2>
+<p>
+            Using expressions with your bean or collection properties is very easy.
+            Instead of any bean property you may put an expression.
+                For example if we want to calculate total chief's payment in a Department we can use an expression:
+            </p>
+<div class="source"><pre>
+                ${department.chief.payment * ( department.chief.bonus + 1 )}
+            </pre>
+</div>
+<p>
+                Applying expressions to every collection item is the same easy
+            </p>
+<div class="source"><pre>
+                ${employee.payment * ( employee.bonus + 1 )}
+            </pre>
+</div>
+<p>In every Excel cell you may use as many expressions as you want. For example</p>
+<div class="source"><pre>
+    Payment:${employee.payment/10}, Total:${employee.payment * ( employee.bonus + 1 )}
+            </pre>
+</div>
+</div>
+<div class="section"><h2><a name="Map_Properties_Access"></a>Map Properties Access</h2>
+<p>It is easy to access properties which are placed in a Map object. For example assuming a Map is placed into
+            bean context under 'map' key we can access individual objects using String-valued key</p>
+<div class="source"><pre>
+                ${map.get(&quot;object1&quot;).property1} + ${map.get('object2').property3}
+            </pre>
+</div>
+</div>
+<div class="section"><h2><a name="JEXL_Expressions_Support"></a>JEXL Expressions Support</h2>
+<p>
+                jXLS uses <a class="externalLink" href="http://commons.apache.org/jexl/">Jakarta Commons JEXL</a> library to evaluate expressions.
+                It means that besides standard arithmetic and boolean expressions you may also use arrays, collection references,
+                perform object method calls and do many other things supported by JEXL.
+                See reference on <a class="externalLink" href="http://commons.apache.org/jexl/reference/syntax.html">JEXL Syntax</a> for more details.
+                Still there are a couple of limitations imposed by jXLS on JEXL that needs to be mentioned.</p>
+<ul><li>Use of the JEXL built-in &quot;size&quot; function does not produce the expected result because JXLS handles collections in a special way</li>
+<li>Functions on collections cannot be called because they are hidden by the way that JXLS handles collections</li>
+</ul>
+<p>
+                Also due to a special jXLS inner collections handling mechanism JEXL expressions for inner collections should be
+                explicitly enabled. See the next section for details about accessing inner collections with JEXL.
+            </p>
+<p>To give you an example of some JEXL expressions let's
+                assume the following code
+            </p>
+<div class="source"><pre>
+                ...
+        Map beans = new HashMap();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;);
+        beans.put(&quot;dateFormat&quot;, dateFormat);
+        SampleBean obj = new SampleBean();
+        beans.put(&quot;obj&quot;, obj);
+        XLSTransformer transformer = new XLSTransformer();
+        HSSFWorkbook resultWorkbook = transformer.transformXLS(inputStream, beans);
+                ...
+            </pre>
+</div>
+<p>has been applied to the <a href="../samples/bean.html">Bean</a>.</p>
+<p>Next JEXL expressions can be put in XLS template and evaluated</p>
+<div class="source"><pre>
+                ${obj.name}
+                ${&quot;Hello, World&quot;}
+                ${obj.flag == true}
+                ${obj.name == null}
+                ${empty(obj.collection)}
+                ${obj.name.size()}
+                ${!empty(obj.collection) &amp;&amp; obj.id &gt; 0}
+                ${empty(obj.collection) || obj.id == 1}
+                ${not empty(obj.collection)}
+                ${obj.id &gt; 1}
+                ${obj.id == 1}
+                ${obj.id eq 1}
+                ${obj.id % 2}
+                ${obj.myArray[0]} and ${obj.myArray[1]}
+                ${dateFormat.format(obj.date)}
+                ${obj.printIt()}
+                ${obj.getName()}
+                ${obj.echo(&quot;Hello&quot;)}
+            </pre>
+</div>
+</div>
+<div class="section"><h2><a name="Using_JEXL_to_access_inner_collections"></a>Using JEXL to access inner collections</h2>
+<p>
+                Direct JEXL access to the items of inner collections is disabled by default because
+                jXLS has its own inner collections handling mechanism.
+                If you need this feature you have to turn it on explicitly by using a special method in XLSTransformer: </p>
+<div class="source"><pre>
+                    XLSTransformer transformer = new XLSTransformer();
+                    transformer.setJexlInnerCollectionsAccess( true );
+                </pre>
+</div>
+<p>
+                In this case built-in jXLS mechanism for handling inner collections will be disabled so JEXL expressions could be used
+                to access inner collections in the following way: </p>
+<div class="source"><pre>obj.collection.innerCollection.get(1)</pre>
+</div>
+<p> This expression would display the first item from all inner collections, each in a cell of its own.
+                For example for an object graph that is structured like this... <a href="../samples/bean2.html">Sample Bean</a>
+                and placed into the context using
+            </p>
+<div class="source"><pre>
+            beans.put(&quot;obj&quot;, new Bean());
+            </pre>
+</div>
+<p> ...the expression would populate 3 cells on 3 different rows...</p>
+<div class="source"><pre>
+            |1|
+            |a|
+            |i|
+            </pre>
+</div>
+<note> When enabling JEXL to handle inner collections you will not longer be able to use
+                   <a href="advancedcollections.html#innercollections">jXLS inner collections</a>.
+                Instead you should use <a href="tags.html#foreach">jx:forEachTag</a> to iterate inner collections.
+            </note></div>
+<div class="section"><h2><a name="Using_aggregate_functions"></a>Using aggregate functions</h2>
+<p>You can use aggregate functions to operate on collections. The syntax is like this</p>
+<div class="source"><pre>
+                ${Function_Name(field):collection}
+            </pre>
+</div>
+<p>Here <code>Function_Name</code> is the name of the aggregate function to apply to the <code>field</code>
+                property for all the <code>collection</code> items.
+            </p>
+<p>Currently the next aggregate functions are supported:</p>
+<ul><li>sum</li>
+<li>min</li>
+<li>max</li>
+<li>avg</li>
+<li>count</li>
+</ul>
+<p>For example if we need to count the number of employees for a department we should use following syntax</p>
+<div class="source"><pre>${count(name):department.staff}</pre>
+</div>
+<p>In the same way we can calculate the maximum employee payment: </p>
+<div class="source"><pre>
+                ${max(payment):department.staff}
+            </pre>
+</div>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>jxls - Advanced Collections</title>
+    <style type="text/css" media="all">
+      @import url("../css/maven-base.css");
+      @import url("../css/maven-theme.css");
+      @import url("../css/site.css");
+    </style>
+    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
+          <meta name="author" content="Leonid Vysochyn" />
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+      </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="http://jxls.sourceforge.net" id="bannerLeft">
+    
+            jXLS
+    
+            </a>
+                          <span id="bannerRight">
+    
+                                    <img src="http://sourceforge.net/sflogo.php?group_id=141729&type=1" alt="" />
+    
+            </span>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+  
+  
+    
+            <div class="xleft">
+        Last Published: 13 Nov 2014
+                      </div>
+            <div class="xright">            <a href="http://sourceforge.net/projects/jxls" class="externalLink">jXLS on Sourceforge</a>
+            
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+  
+  
+    
+                   <h5>Overview</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../index.html">Home</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://sourceforge.net/project/showfiles.php?group_id=141729" class="externalLink">Downloads</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/installation.html">Installation</a>
+          </li>
+          </ul>
+              <h5>Reference</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../reference/simplebeans.html">Simple Beans</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/tags.html">Using Tags</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sqlreporting.html">SQL Reporting</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/collections.html">Collections</a>
+          </li>
+              
+    <li class="none">
+              <strong>Advanced Collections</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="../reference/dynamicsheets.html">Dynamic Sheets</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/expressions.html">Using Expressions</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/formulas.html">Formulas Notation</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/poiaccess.html">POI Objects Access</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/columnhiding.html">Column Hiding</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/sheetoperations.html">Spreadsheet Operations</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/customprocessor.html">Custom Processor</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/resultset.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../reference/reader.html">XLS Reader</a>
+          </li>
+          </ul>
+              <h5>Samples</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../samples/tagsample.html">Tags Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/chartsample.html">Charts</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/reportsample.html">Reporting Sample</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/collectionsample.html">Collections</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/adjacentlists.html">Adjacent Lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamicstylesample.html">Dynamic Style</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/resultsetsample.html">JDBC ResultSet</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../samples/dynamiccolumnssample.html">Dynamic Columns</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="../project-info.html">Project Information</a>
+                </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="../images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+  
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="Overview"></a>Overview</h2>
+<p>This part describes more complex cases when exporting collections.</p>
+<p>Next sections assume that we have two dependent Java beans of type
+                <a href="../samples/departmentbean.html">Department</a> and
+                <a href="../samples/employeebean.html">Employee</a> which are passed to XLSTransformer in a code like this
+            </p>
+<div class="source"><pre>
+				        Department department;
+				        ... //initialization
+				        Map beans = new HashMap();
+				        beans.put(&quot;department&quot;, department);
+				        XLSTransformer transformer = new XLSTransformer();
+				        transformer.transformXLS(xlsTemplateFileName, beans, outputFileName);
+            </pre>
+</div>
+</div>
+<div class="section"><h2><a name="Adjacent_collections_export"></a>Adjacent collections export</h2>
+<p>This section describes how to export adjacent collections. Using this feature you may specify more
+            than one collection in the same row. Also it is possible to export a collection related cells side by side with fixed values cells.
+                See <a href="../samples/adjacentlistsample">Adjacent Lists</a> sample.</p>
+<p>The main thing to remember is that for each cell that should be duplicated with some collection (except
+            those cells which contain some collection properties) you have to specify the name of the related collection
+            after <strong><code>//</code></strong>. For example </p>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="b"><td><strong>1</strong></td>
+<td><strong>Department ${dep1.name}</strong></td>
+<td><em>Name://dep1.staff</em></td>
+<td>${dep1.staff.name}</td>
+<td><em>Payment://dep1.staff</em></td>
+<td>${dep1.staff.payment}</td>
+<td><strong>Department ${dep2.name}</strong></td>
+<td><em>Name://dep2.staff</em></td>
+<td>${dep2.staff.name}</td>
+<td><em>Payment://dep2.staff</em></td>
+<td>${dep2.staff.payment}</td>
+</tr>
+</table>
+<p>Here we assumed that we have two <a href="../samples/departmentbean.html">Department</a> beans passed to XLSTransformer
+            under keys <code>dep1</code> and <code>dep2</code>.</p>
+<p>You see that <code>Name:</code> cell should be duplicated along with <code>dep1.staff</code>
+                collection. It is indicated by specifying <strong>//dep1.staff</strong> or <strong>//dep2.staff</strong>
+                in the cell. In the same time cell <code>Department ${dep1.name}</code> does not have such indication
+                and will not be duplicated with any collection cells. In this way the output will be like following
+            </p>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+<tr class="b"><td><strong>1</strong></td>
+<td><strong>Department IT</strong></td>
+<td><em>Name:</em></td>
+<td>John</td>
+<td><em>Payment:</em></td>
+<td>3000.0</td>
+<td><strong>Department HR</strong></td>
+<td><em>Name:</em></td>
+<td>Oleg</td>
+<td><em>Payment:</em></td>
+<td>2500.0</td>
+</tr>
+<tr class="a"><td><strong>2</strong></td>
+<td></td>
+<td><em>Name:</em></td>
+<td>Neil</td>
+<td><em>Payment:</em></td>
+<td>2000.0</td>
+<td></td>
+<td><em>Name:</em></td>
+<td>Yuri</td>
+<td><em>Payment:</em></td>
+<td>2000.0</td>
+</tr>
+<tr class="b"><td><strong>3</strong></td>
+<td></td>
+<td><em>Name:</em></td>
+<td>Jim</td>
+<td><em>Payment:</em></td>
+<td>1800.0</td>
+<td></td>
+<td><em>Name:</em></td>
+<td>Alex</td>
+<td><em>Payment:</em></td>
+<td>1700.0</td>
+</tr>
+</table>
+</div>
+<div class="section"><h2><a name="Several_Excel_rows_per_collection_item"></a>Several Excel rows per collection item</h2>
+<p>Let's assume that you need to output different properties of every item in the collection in several rows. With
+                <a class="externalLink" href="http://jxls.sourceforge.net">jXLS</a> it is as easy as adding a number of additional rows in meta section of a cell.
+				For example, if you want to output each employee name in the first row and employee payment in the second
+                row you should specify your first collection property in the way
+            </p>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="b"><td><strong>1</strong></td>
+<td><strong>Employee Name:</strong></td>
+<td>${department.staff.name}//:2</td>
+</tr>
+<tr class="a"><td><strong>2</strong></td>
+<td><strong>Employee Payment:</strong></td>
+<td>${department.staff.payment}</td>
+</tr>
+<tr class="b"><td><strong>3</strong></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>The number
+                <code>2</code> in
+                <code>${department.staff.name}//:2</code> indicates that next 2 rows are also related to the same collection and should be processed for every collection item.
+                So we'll have 3 rows per collection item in this sample (3d row is empty)
+            </p>
+<table class="bodyTable"><tr class="a"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="b"><td><strong>1</strong></td>
+<td><strong>Employee Name:</strong></td>
+<td>John</td>
+</tr>
+<tr class="a"><td><strong>2</strong></td>
+<td><strong>Employee Payment:</strong></td>
+<td>3000</td>
+</tr>
+<tr class="b"><td><strong>3</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="a"><td><strong>4</strong></td>
+<td><strong>Employee Name:</strong></td>
+<td>Neil</td>
+</tr>
+<tr class="b"><td><strong>5</strong></td>
+<td><strong>Employee Payment:</strong></td>
+<td>2000</td>
+</tr>
+<tr class="a"><td><strong>6</strong></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="section"><h2><a name="Inner_Collections_grouping"></a>Inner Collections (grouping)</h2>
+<p>When you have a collection of items with inner collections the same syntax can be used to export grouped data. For example if you have a collection of departments you can export every department and all its employees as following: </p>
+<table class="bodyTable"><tr class="b"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="a"><td><strong>1</strong></td>
+<td><strong>Department</strong></td>
+<td>${departments.name}//:4</td>
+</tr>
+<tr class="b"><td><strong>2</strong></td>
+<td><strong>Staff:</strong></td>
+<td></td>
+</tr>
+<tr class="a"><td><strong>3</strong></td>
+<td><strong>Name</strong></td>
+<td><strong>Payment</strong></td>
+</tr>
+<tr class="b"><td><strong>4</strong></td>
+<td>${departments.staff.name}</td>
+<td>${departments.staff.payment}</td>
+</tr>
+<tr class="a"><td><strong>5</strong></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<p>The number
+                <code>4</code> in
+                <code>${departments.name}//:4</code> specifies that next 4 rows are also related to the
+                <code>departments</code> collection. For every department the collection of its employees will be processed in a usual way.
+            </p>
+<p>In this way you will get result XLS similar to</p>
+<table class="bodyTable"><tr class="b"><th></th>
+<th>A</th>
+<th>B</th>
+</tr>
+<tr class="a"><td><strong>1</strong></td>
+<td><strong>Department</strong></td>
+<td>Software</td>
+</tr>
+<tr class="b"><td><strong>2</strong></td>
+<td><strong>Staff:</strong></td>
+<td></td>
+</tr>
+<tr class="a"><td><strong>3</strong></td>
+<td><strong>Employee Name</strong></td>
+<td><strong>Employee Payment</strong></td>
+</tr>
+<tr class="b"><td><strong>4</strong></td>
+<td>John</td>
+<td>3000</td>
+</tr>
+<tr class="a"><td><strong>5</strong></td>
+<td>Neil</td>
+<td>2000</td>
+</tr>
+<tr class="b"><td><strong>6</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="a"><td><strong>7</strong></td>
+<td><strong>Department</strong></td>
+<td>Design</td>
+</tr>
+<tr class="b"><td><strong>8</strong></td>
+<td><strong>Staff:</strong></td>
+<td></td>
+</tr>
+<tr class="a"><td><strong>9</strong></td>
+<td><strong>Employee Name</strong></td>
+<td><strong>Employee Payment</strong></td>
+</tr>
+<tr class="b"><td><strong>10</strong></td>
+<td>Oleg</td>
+<td>2500</td>
+</tr>
+<tr class="a"><td><strong>11</strong></td>
+<td>Alex</td>
+<td>1500</td>
+</tr>
+<tr class="b"><td><strong>12</strong></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2005-2014
+    
+          jXLS Team
+          
+  
+
+  
+    
+  
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>
