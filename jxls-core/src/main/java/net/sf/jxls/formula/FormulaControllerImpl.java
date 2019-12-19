@@ -136,7 +136,7 @@ public class FormulaControllerImpl implements FormulaController {
                     }
                     catch (RuntimeException e) {
                         log.error("Can't set formula: " + formulaString, e);
-//                        hssfCell.setCellType( Cell.CELL_TYPE_BLANK );
+//                        hssfCell.setCellType( CellType.BLANK );
                         throw new RuntimeException("Can't set formula: " + formulaString, e);
                     }
                 }
