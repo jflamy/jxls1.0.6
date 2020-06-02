@@ -53,7 +53,7 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>3.17</version>
+            <version>4.1.2</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -75,51 +75,22 @@
         </dependency>
     </dependencies>
 
-<!--     <distributionManagement> -->
-<!--         <repository> -->
-<!--                 note that you must use mvn command line to deploy, does not work with embedded eclipse maven -->
-<!--                  for example:     mvn -s c:\Dev\.m2\settings.xml deploy -->
-<!--             <id>github</id> -->
-<!--             <name>GitHub jflamy owlcms4 Apache Maven Packages</name> -->
-<!--             <url>https://maven.pkg.github.com/owlcms/packages</url> -->
-<!--         </repository> -->
-<!--     </distributionManagement> -->
+    <!-- note that you must use mvn command line to deploy, does not work with embedded eclipse maven -->
+    <!-- for example: mvn -s c:\Dev\.m2\settings.xml -Dmaven.skip.test=true deploy -->
     <distributionManagement>
         <repository>
-            <id>bintray-owlcms-owlcms-maven</id>
-            <name>owlcms-owlcms-maven</name>
-            <url>https://api.bintray.com/maven/owlcms/owlcms-maven/app.owlcms:jxls-core/;publish=1</url>
+            <id>bintray-owlcms-maven</id>
+            <name>bintray-owlcms-maven</name>
+            <url>https://api.bintray.com/maven/owlcms/owlcms-maven/${project.artifactId};publish=1</url>
         </repository>
     </distributionManagement>
-    
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <systemProperties>
-                        <property>
-                            <name>saveResults</name>
-                            <value>true</value>
-                        </property>
-                    </systemProperties>
-                    <!--<excludes> -->
-                    <!--<exclude>**/*StressTest.java</exclude> -->
-                    <!--</excludes> -->
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.0</version>
-                <!--<configuration> -->
-                <!--<templateFile>../src/site/site.vm</templateFile> -->
-                <!--</configuration> -->
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
@@ -127,18 +98,4 @@
             </plugin>
         </plugins>
     </build>
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>2.5</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.3.2</version>
-            </plugin>
-        </plugins>
-    </reporting>
 </project>
