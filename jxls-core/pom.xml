@@ -1,9 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-<!--     <parent> -->
-        <groupId>net.sf.jxls</groupId>
-<!--         <artifactId>jxls</artifactId> -->
-        <version>1.0.7.owlcms</version>
-<!--     </parent> -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- <parent> -->
+    <groupId>net.sf.jxls</groupId>
+    <!-- <artifactId>jxls</artifactId> -->
+    <version>1.1.0</version>
+    <!-- </parent> -->
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jxls-core</artifactId>
     <packaging>jar</packaging>
@@ -47,7 +48,7 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>3.17</version>
+            <version>4.1.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -66,7 +67,31 @@
             <version>1.8.0.10</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-deploy-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>3.0.0-M1</version>
+        </dependency>
     </dependencies>
+
+<!--     <distributionManagement> -->
+<!--         <repository> -->
+<!--                 note that you must use mvn command line to deploy, does not work with embedded eclipse maven -->
+<!--                  for example:     mvn -s c:\Dev\.m2\settings.xml deploy -->
+<!--             <id>github</id> -->
+<!--             <name>GitHub jflamy owlcms4 Apache Maven Packages</name> -->
+<!--             <url>https://maven.pkg.github.com/owlcms/packages</url> -->
+<!--         </repository> -->
+<!--     </distributionManagement> -->
+    <distributionManagement>
+        <repository>
+            <id>bintray-owlcms-owlcms-maven</id>
+            <name>owlcms-owlcms-maven</name>
+            <url>https://api.bintray.com/maven/owlcms/owlcms-maven/app.owlcms:jxls-core/;publish=1</url>
+        </repository>
+    </distributionManagement>
+    
     <build>
         <plugins>
             <plugin>
@@ -79,18 +104,18 @@
                             <value>true</value>
                         </property>
                     </systemProperties>
-                    <!--<excludes>-->
-                    <!--<exclude>**/*StressTest.java</exclude>-->
-                    <!--</excludes>-->
+                    <!--<excludes> -->
+                    <!--<exclude>**/*StressTest.java</exclude> -->
+                    <!--</excludes> -->
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.0</version>
-                <!--<configuration>-->
-                <!--<templateFile>../src/site/site.vm</templateFile>-->
-                <!--</configuration>-->
+                <!--<configuration> -->
+                <!--<templateFile>../src/site/site.vm</templateFile> -->
+                <!--</configuration> -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -100,7 +125,6 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
     <reporting>
