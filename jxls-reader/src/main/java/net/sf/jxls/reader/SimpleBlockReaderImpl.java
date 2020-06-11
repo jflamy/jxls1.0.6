@@ -74,7 +74,7 @@ public class SimpleBlockReaderImpl extends BaseBlockReader implements SimpleBloc
     private String getCellString(Cell cell) {
         String dataString = null;
         if (cell != null) {
-            switch (cell.getCellTypeEnum()) {
+            switch (cell.getCellType()) {
                 case STRING:
                     dataString = cell.getRichStringCellValue().getString();
                     break;

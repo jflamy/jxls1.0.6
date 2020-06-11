@@ -111,7 +111,7 @@ public class OffsetRowCheckImpl implements OffsetRowCheck {
         if( cell == null ){
             return true;
         }
-        switch( cell.getCellTypeEnum() ){
+        switch( cell.getCellType() ){
             case BLANK:
                 return true;
             case STRING:
