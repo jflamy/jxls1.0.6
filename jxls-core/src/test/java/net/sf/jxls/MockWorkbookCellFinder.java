@@ -3,7 +3,7 @@ package net.sf.jxls;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.poi.hssf.util.CellReference;
+import org.apache.poi.ss.util.CellReference;
 
 import net.sf.jxls.controller.WorkbookCellFinderImpl;
 

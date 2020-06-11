@@ -32,7 +32,7 @@ public class CellTransformer {
 
     void transform( Cell cell ){
         try {
-            if (cell.getPoiCell() != null && cell.getPoiCell().getCellTypeEnum() == org.apache.poi.ss.usermodel.CellType.STRING) {
+            if (cell.getPoiCell() != null && cell.getPoiCell().getCellType() == org.apache.poi.ss.usermodel.CellType.STRING) {
                 if (cell.getCollectionProperty() == null) {
                     if (cell.getFormula() == null) {
                             if( cell.getExpressions().size() == 0 ){
@@ -42,8 +42,9 @@ public class CellTransformer {
                             }else if (cell.getExpressions().size() == 1) {
                                 Object value = ((Expression) cell.getExpressions().get(0)).evaluate();
                                 if (value == null) {
-                                    cell.getPoiCell().setCellValue(cell.getPoiCell().getSheet().getWorkbook().getCreationHelper().createRichTextString(""));
-                                    cell.getPoiCell().setCellType( org.apache.poi.ss.usermodel.CellType.BLANK );
+//                                    cell.getPoiCell().setCellValue(cell.getPoiCell().getSheet().getWorkbook().getCreationHelper().createRichTextString(""));
+//                                    cell.getPoiCell().setCellType( org.apache.poi.ss.usermodel.CellType.BLANK );
+                                    cell.getPoiCell().setBlank();
                                 } else if (value instanceof Float) {
                                     cell.getPoiCell().setCellValue(((Float) value).doubleValue());
                                 }else if (value instanceof Double) {
@@ -71,7 +72,8 @@ public class CellTransformer {
                                         fixedValue = fixedValue.replaceAll("\r\n", "\n");
                                     }
                                     if( fixedValue.length() == 0 ){
-                                        cell.getPoiCell().setCellType( org.apache.poi.ss.usermodel.CellType.BLANK );
+                                        cell.getPoiCell().setBlank();
+                                        //cell.getPoiCell().setCellType( org.apache.poi.ss.usermodel.CellType.BLANK );
                                     }else{
                                         cell.getPoiCell().setCellValue(cell.getPoiCell().getSheet().getWorkbook().getCreationHelper().createRichTextString(fixedValue));
                                     }
@@ -116,7 +118,7 @@ public class CellTransformer {
 
     private void setCellValue(Cell cell, String value) {
         if (value == null || value.length() == 0) {
-            cell.getPoiCell().setCellType( org.apache.poi.ss.usermodel.CellType.BLANK );
+            cell.getPoiCell().setBlank(); // setCellType( org.apache.poi.ss.usermodel.CellType.BLANK );
         } else {
             cell.getPoiCell().setCellValue(cell.getPoiCell().getSheet().getWorkbook().getCreationHelper().createRichTextString(value));
         }

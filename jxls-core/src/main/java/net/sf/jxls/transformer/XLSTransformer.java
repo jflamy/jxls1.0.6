@@ -494,7 +494,7 @@ public class XLSTransformer {
                 if (hssfRow != null && hssfRow.getFirstCellNum() >= 0 && hssfRow.getLastCellNum() >= 0) {
                     for (int j = hssfRow.getFirstCellNum(), c3 = hssfRow.getLastCellNum(); j <= c3; j++) {
                         Cell cell = hssfRow.getCell(j);
-                        if (cell != null && cell.getCellTypeEnum() == CellType.STRING) {
+                        if (cell != null && cell.getCellType() == CellType.STRING) {
                             String value = cell.getRichStringCellValue().getString();
                             for (int k = 0, c4 = propertyPreprocessors.size(); k < c4; k++) {
                                 PropertyPreprocessor propertyPreprocessor = (PropertyPreprocessor) propertyPreprocessors.get(k);
@@ -539,7 +539,7 @@ public class XLSTransformer {
                     //for all cells
                     for (int j = hssfRow.getFirstCellNum(), c3 = hssfRow.getLastCellNum(); j <= c3; j++) {
                         Cell cell = hssfRow.getCell(j);
-                        if (cell != null && cell.getCellTypeEnum() == CellType.STRING) {
+                        if (cell != null && cell.getCellType() == CellType.STRING) {
                             String value = cell.getRichStringCellValue().getString();
                             //if any from columnPropertyNamesToHide is substring of cell value, than hide column
                             for (int prptIndx = 0; prptIndx < columnPropertyNamesToHide.length; prptIndx++) {

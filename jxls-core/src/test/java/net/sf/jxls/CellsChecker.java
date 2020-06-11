@@ -141,7 +141,7 @@ public class CellsChecker extends Assert {
     void checkFormulaCell(Sheet sheet, int rowNum, int cellNum, String formula){
         Row row = sheet.getRow(rowNum);
         Cell cell = row.getCell(cellNum);
-        assertEquals("Result Cell is not a formula", cell.getCellTypeEnum(), CellType.FORMULA);
+        assertEquals("Result Cell is not a formula", cell.getCellType(), CellType.FORMULA);
         assertEquals("Formula is incorrect", formula, cell.getCellFormula());
     }
 
@@ -151,7 +151,7 @@ public class CellsChecker extends Assert {
         Row destRow = destSheet.getRow(destRowNum);
         Cell destCell = destRow.getCell(cellNum);
         checkCellStyle(srcCell.getCellStyle(), destCell.getCellStyle());
-        assertEquals("Result Cell is not a formula", destCell.getCellTypeEnum(), CellType.FORMULA);
+        assertEquals("Result Cell is not a formula", destCell.getCellType(), CellType.FORMULA);
         assertEquals("Formula is incorrect", formula, destCell.getCellFormula());
     }
 
@@ -163,7 +163,7 @@ public class CellsChecker extends Assert {
         if (!ignoreCellStyle) {
             checkCellStyle(srcCell.getCellStyle(), destCell.getCellStyle());
         }
-        assertEquals("Result Cell is not a formula", destCell.getCellTypeEnum(), CellType.FORMULA);
+        assertEquals("Result Cell is not a formula", destCell.getCellType(), CellType.FORMULA);
         assertEquals("Formula is incorrect", formula, destCell.getCellFormula());
     }
 
@@ -230,15 +230,15 @@ public class CellsChecker extends Assert {
 
     private void checkCellStyle(CellStyle sourceStyle, CellStyle destStyle) {
         if (!ignoreStyle) {
-            assertEquals(sourceStyle.getAlignmentEnum(), destStyle.getAlignmentEnum());
-            assertEquals(sourceStyle.getBorderBottomEnum(), destStyle.getBorderBottomEnum());
-            assertEquals(sourceStyle.getBorderLeftEnum(), destStyle.getBorderLeftEnum());
-            assertEquals(sourceStyle.getBorderRightEnum(), destStyle.getBorderRightEnum());
-            assertEquals(sourceStyle.getBorderTopEnum(), destStyle.getBorderTopEnum());
+            assertEquals(sourceStyle.getAlignment(), destStyle.getAlignment());
+            assertEquals(sourceStyle.getBorderBottom(), destStyle.getBorderBottom());
+            assertEquals(sourceStyle.getBorderLeft(), destStyle.getBorderLeft());
+            assertEquals(sourceStyle.getBorderRight(), destStyle.getBorderRight());
+            assertEquals(sourceStyle.getBorderTop(), destStyle.getBorderTop());
             assertEquals(sourceStyle.getBottomBorderColor(), sourceStyle.getBottomBorderColor());
             assertEquals(sourceStyle.getFillBackgroundColor(), destStyle.getFillBackgroundColor());
             assertEquals(sourceStyle.getFillForegroundColor(), sourceStyle.getFillForegroundColor());
-            assertEquals(sourceStyle.getFillPatternEnum(), destStyle.getFillPatternEnum());
+            assertEquals(sourceStyle.getFillPattern(), destStyle.getFillPattern());
             assertEquals(sourceStyle.getHidden(), destStyle.getHidden());
             assertEquals(sourceStyle.getIndention(), destStyle.getIndention());
             assertEquals(sourceStyle.getLeftBorderColor(), destStyle.getLeftBorderColor());
@@ -246,42 +246,42 @@ public class CellsChecker extends Assert {
             assertEquals(sourceStyle.getRightBorderColor(), destStyle.getRightBorderColor());
             assertEquals(sourceStyle.getRotation(), destStyle.getRotation());
             assertEquals(sourceStyle.getTopBorderColor(), destStyle.getTopBorderColor());
-            assertEquals(sourceStyle.getVerticalAlignmentEnum(), destStyle.getVerticalAlignmentEnum());
+            assertEquals(sourceStyle.getVerticalAlignment(), destStyle.getVerticalAlignment());
             assertEquals(sourceStyle.getWrapText(), destStyle.getWrapText());
         }
     }
 
     private void checkCellValue(Cell sourceCell, Cell destCell) {
-        switch (sourceCell.getCellTypeEnum()) {
+        switch (sourceCell.getCellType()) {
             case STRING:
                 if (propertyMap.containsKey(sourceCell.getRichStringCellValue().getString())) {
                     assertEquals("Property value was set incorrectly", propertyMap.get(sourceCell.getRichStringCellValue().getString()), getCellValue(destCell, propertyMap.get(sourceCell.getRichStringCellValue().getString())));
                 } else {
-                    assertEquals("Cell type is not the same", sourceCell.getCellTypeEnum(), destCell.getCellTypeEnum());
+                    assertEquals("Cell type is not the same", sourceCell.getCellType(), destCell.getCellType());
                     assertEquals("Cell values are not the same", sourceCell.getRichStringCellValue().getString(), destCell.getRichStringCellValue().getString());
                 }
                 break;
             case NUMERIC:
-                assertEquals("Cell type is not the same", sourceCell.getCellTypeEnum(), destCell.getCellTypeEnum());
+                assertEquals("Cell type is not the same", sourceCell.getCellType(), destCell.getCellType());
                 assertTrue("Cell values are not the same", sourceCell.getNumericCellValue() == destCell.getNumericCellValue());
                 break;
             case BOOLEAN:
-                assertEquals("Cell type is not the same", sourceCell.getCellTypeEnum(), destCell.getCellTypeEnum());
+                assertEquals("Cell type is not the same", sourceCell.getCellType(), destCell.getCellType());
                 assertEquals("Cell values are not the same", sourceCell.getBooleanCellValue(), destCell.getBooleanCellValue());
                 break;
             case ERROR:
-                assertEquals("Cell type is not the same", sourceCell.getCellTypeEnum(), destCell.getCellTypeEnum());
+                assertEquals("Cell type is not the same", sourceCell.getCellType(), destCell.getCellType());
                 assertEquals("Cell values are not the same", sourceCell.getErrorCellValue(), destCell.getErrorCellValue());
                 break;
             case FORMULA:
-                assertEquals("Cell type is not the same", sourceCell.getCellTypeEnum(), destCell.getCellTypeEnum());
+                assertEquals("Cell type is not the same", sourceCell.getCellType(), destCell.getCellType());
                 assertEquals("Cell values are not the same", sourceCell.getCellFormula(), destCell.getCellFormula());
                 break;
             case BLANK:
-                assertEquals("Cell type is not the same", sourceCell.getCellTypeEnum(), destCell.getCellTypeEnum());
+                assertEquals("Cell type is not the same", sourceCell.getCellType(), destCell.getCellType());
                 break;
             default:
-                fail("Unknown cell type, code=" + sourceCell.getCellTypeEnum() + ", value=" + sourceCell.getRichStringCellValue().getString());
+                fail("Unknown cell type, code=" + sourceCell.getCellType() + ", value=" + sourceCell.getRichStringCellValue().getString());
                 break;
         }
     }
@@ -305,9 +305,9 @@ public class CellsChecker extends Assert {
             c.setTime(cell.getDateCellValue());
             value = c;
         } else if (obj instanceof Boolean) {
-            if (cell.getCellTypeEnum() == CellType.BOOLEAN) {
+            if (cell.getCellType() == CellType.BOOLEAN) {
                 value = (cell.getBooleanCellValue()) ? Boolean.TRUE : Boolean.FALSE;
-            } else if (cell.getCellTypeEnum() == CellType.STRING) {
+            } else if (cell.getCellType() == CellType.STRING) {
                 value = Boolean.valueOf(cell.getRichStringCellValue().getString());
             } else {
                 value = Boolean.FALSE;

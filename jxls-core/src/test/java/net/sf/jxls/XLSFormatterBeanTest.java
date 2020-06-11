@@ -179,7 +179,7 @@ public class XLSFormatterBeanTest extends TestCase {
 		public short fillBackgroundColor;
 		public short fillForegroundColor;
 		public FillPatternType fillPattern;
-		public short fontIndex;
+		public int fontIndex;
 		public boolean hidden;
 		public short indention;
 		public short leftBorderColor;
@@ -196,17 +196,17 @@ public class XLSFormatterBeanTest extends TestCase {
 		}
 
 		public StyleVO( HSSFCellStyle style, Workbook workbook ) {
-			alignment = style.getAlignmentEnum();
-			borderBottom = style.getBorderBottomEnum();
-			borderLeft = style.getBorderLeftEnum();
-			borderRight = style.getBorderRightEnum();
-			borderTop = style.getBorderTopEnum();
+			alignment = style.getAlignment();
+			borderBottom = style.getBorderBottom();
+			borderLeft = style.getBorderLeft();
+			borderRight = style.getBorderRight();
+			borderTop = style.getBorderTop();
 			bottomBorderColor = style.getBottomBorderColor();
 			dataFormat = style.getDataFormat();
 			fillBackgroundColor = style.getFillBackgroundColor();
 			fillForegroundColor = style.getFillForegroundColor();
-			fillPattern = style.getFillPatternEnum();
-			fontIndex = style.getFontIndex();
+			fillPattern = style.getFillPattern();
+			fontIndex = style.getFontIndexAsInt();
 
 			hidden = style.getHidden();
 			indention = style.getIndention();
@@ -215,7 +215,7 @@ public class XLSFormatterBeanTest extends TestCase {
 			rightBorderColor = style.getRightBorderColor();
 			rotation = style.getRotation();
 			topBorderColor = style.getTopBorderColor();
-			verticalAlignment = style.getVerticalAlignmentEnum();
+			verticalAlignment = style.getVerticalAlignment();
 			wrapText = style.getWrapText();
 
 			fontVal = new FontVO( style.getFont( workbook ) );
@@ -287,7 +287,7 @@ public class XLSFormatterBeanTest extends TestCase {
 			style.setFillForegroundColor( this.fillForegroundColor );
 			style.setFillBackgroundColor( this.fillBackgroundColor );
 
-			style.setFont( workbook.getFontAt( this.fontIndex ) );
+			style.setFont( workbook.getFontAt( (int)this.fontIndex ) );
 
 			style.setHidden( this.hidden );
 			style.setIndention( this.indention );

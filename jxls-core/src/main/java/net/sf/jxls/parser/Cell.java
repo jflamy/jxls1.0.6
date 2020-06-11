@@ -155,7 +155,7 @@ public class Cell {
     }
 
     private void figureEmpty() {
-        empty = getPoiCellValue() == null || getPoiCellValue().length() == 0 || getPoiCell().getCellTypeEnum() == org.apache.poi.ss.usermodel.CellType.BLANK;
+        empty = getPoiCellValue() == null || getPoiCellValue().length() == 0 || getPoiCell().getCellType() == org.apache.poi.ss.usermodel.CellType.BLANK;
     }
 
     public boolean isEmpty() {
