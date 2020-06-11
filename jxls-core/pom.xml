@@ -76,7 +76,7 @@
     </dependencies>
 
     <!-- note that you must use mvn command line to deploy, does not work with embedded eclipse maven -->
-    <!-- for example: mvn -s c:\Dev\.m2\settings.xml -Dmaven.skip.test=true deploy -->
+    <!-- for example:  mvn -s c:\Dev\.m2\settings.xml -Dmaven.test.skip=true deploy  -->
     <distributionManagement>
         <repository>
             <id>bintray-owlcms-maven</id>
