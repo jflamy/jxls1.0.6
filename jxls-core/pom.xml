@@ -10,9 +10,25 @@
     <packaging>jar</packaging>
     <name>jxls-core</name>
     <url>http://jxls.sf.net</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <description>
         jXLS is a small and easy-to-use Java library for generating Excel files using XLS templates
     </description>
+
+    <!-- note that you must use mvn command line to deploy, does not work with embedded eclipse maven -->
+    <!-- for example: mvn -s c:\Dev\.m2\settings.xml -Dmaven.test.skip=true deploy -->
+    <distributionManagement>
+        <repository>
+            <id>owlcms-maven-repo</id>
+            <url>http://maven.owlcms.mywire.org:8088/releases</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>net.sf.opencsv</groupId>
@@ -74,16 +90,6 @@
             <version>3.0.0-M1</version>
         </dependency>
     </dependencies>
-
-    <!-- note that you must use mvn command line to deploy, does not work with embedded eclipse maven -->
-    <!-- for example:  mvn -s c:\Dev\.m2\settings.xml -Dmaven.test.skip=true deploy  -->
-    <distributionManagement>
-        <repository>
-            <id>bintray-owlcms-maven</id>
-            <name>bintray-owlcms-maven</name>
-            <url>https://api.bintray.com/maven/owlcms/owlcms-maven/${project.artifactId}/;publish=1</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <plugins>

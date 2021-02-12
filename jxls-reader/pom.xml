@@ -73,9 +73,8 @@
     <!-- for example: mvn -s c:\Dev\.m2\settings.xml -Dmaven.test.skip=true deploy -->
     <distributionManagement>
         <repository>
-            <id>bintray-owlcms-maven</id>
-            <name>bintray-owlcms-maven</name>
-            <url>https://api.bintray.com/maven/owlcms/owlcms-maven/${project.artifactId}/;publish=1</url>
+            <id>owlcms-maven-repo</id>
+            <url>http://maven.owlcms.mywire.org:8088/releases</url>
         </repository>
     </distributionManagement>
     
